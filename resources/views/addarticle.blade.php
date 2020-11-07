@@ -13,7 +13,7 @@
       <small>Halaman ini berfungsi untuk mengelola data dalam tabel</small>
     </h1>
 
-    <form action="/article/create" method="post">
+    <form action="/artikel/create" method="post">
         @csrf
         <div class="form-group">
             <label for="title">Judul</label>

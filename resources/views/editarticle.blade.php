@@ -13,7 +13,7 @@
       <small>Halaman ini berfungsi untuk mengelola data dalam tabel</small>
     </h1>
 
-    <form action="/article/update/{{$article->id}}" method="post">
+    <form action="/artikel/update/{{$article->id}}" method="post">
         {{csrf_field()}}
         <input type="hidden" name="id" value="{{$article->id}}"></br>
         <div class="form-group">

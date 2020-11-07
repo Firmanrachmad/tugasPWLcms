@@ -49,19 +49,25 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="/home1">Home
-              <span class="sr-only">(current)</span>
-            </a>
+          <li class="nav-item {{ Route::is('home1') ? 'active' : '' }}">
+            @can('user-display')
+              <a class="nav-link" href="{{ route('home1') }}">Home</a>
+            @endcan
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/about">About</a>
+          <li class="nav-item {{ Route::is('about') ? 'active' : '' }}">
+            @can('user-display')
+              <a class="nav-link" href="{{ route('about') }}">About</a>
+            @endcan
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/category">Rekomendasi</a>
+          <li class="nav-item {{ Route::is('category') ? 'active' : '' }}">
+            @can('user-display')
+              <a class="nav-link" href="{{ route('category') }}">Rekomendasi</a>
+            @endcan
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/manage">Kelola</a>
+          <li class="nav-item {{ Route::is('manage') ? 'active' : '' }}">
+            @can('manage-articles')
+              <a class="nav-link" href="{{ route('manage') }}">Kelola</a>
+            @endcan
           </li>
           <li class="nav-item dropdown">
             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

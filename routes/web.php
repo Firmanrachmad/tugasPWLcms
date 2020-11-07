@@ -21,7 +21,7 @@ Route::get('/', function() {
 
 Route::get('/about', 'AboutController@about');
 
-// Route::get('/article/{id}', 'ArticleController@article');
+Route::get('/article/{id}', 'ArticleController@article');
 
 Route::get('/master', 'MasterController@master');
 
@@ -29,15 +29,15 @@ Route::get('/category', 'CategoryController@category');
 
 Route::get('/manage', 'ArticleController@index')->name('manage');
 
-Route::get('/article/add','ArticleController@add');
+Route::get('/artikel/add','ArticleController@add');
 
-Route::post('/article/create','ArticleController@create');
+Route::post('/artikel/create','ArticleController@create');
 
-Route::get('/article/edit/{id}','ArticleController@edit');
+Route::get('/artikel/edit/{id}','ArticleController@edit');
 
-Route::post('/article/update/{id}','ArticleController@update');
+Route::post('/artikel/update/{id}','ArticleController@update');
 
-Route::get('/article/delete/{id}','ArticleController@delete');
+Route::get('/artikel/delete/{id}','ArticleController@delete');
 
 Auth::routes();
 

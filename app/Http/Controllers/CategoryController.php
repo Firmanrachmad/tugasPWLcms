@@ -11,4 +11,7 @@ class CategoryController extends Controller
     	$articlesAll = \App\Article::paginate(2);
         return view('category')->with(compact('articlesAll')); 
     }
+    public function __construct(){
+        $this->middleware('auth');
+    }
 }
