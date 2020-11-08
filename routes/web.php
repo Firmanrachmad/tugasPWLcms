@@ -19,13 +19,13 @@ Route::get('/', function() {
 
 /*Route::get('/home/{page}', 'HomeController@home1');*/
 
-Route::get('/about', 'AboutController@about');
+Route::get('/about', 'AboutController@about')->name('about');
 
 Route::get('/article/{id}', 'ArticleController@article');
 
 Route::get('/master', 'MasterController@master');
 
-Route::get('/category', 'CategoryController@category');
+Route::get('/category', 'CategoryController@category')->name('category');
 
 Route::get('/manage', 'ArticleController@index')->name('manage');
 
@@ -41,6 +41,6 @@ Route::get('/artikel/delete/{id}','ArticleController@delete');
 
 Auth::routes();
 
-Route::get('/home1', 'HomeController1@index');
+Route::get('/home1', 'HomeController1@index')->name('home1');
 
 
