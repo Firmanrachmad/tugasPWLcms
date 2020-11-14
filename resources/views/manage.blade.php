@@ -39,6 +39,7 @@
         @endforeach
     </tbody>
     </table>
+    <a href="/article/cetak_pdf" class="btn btn-primary" target="_blank">CETAK PDF</a>
     
 
   </div>
