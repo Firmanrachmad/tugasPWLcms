@@ -39,7 +39,7 @@ Route::post('/artikel/update/{id}','ArticleController@update');
 
 Route::get('/artikel/delete/{id}','ArticleController@delete');
 
-Route::get('/article/cetak_pdf', 'ArticleController@cetak_pdf');
+Route::get('/artikel/cetak_pdf', 'ArticleController@cetak_pdf');
 
 Auth::routes();
 
