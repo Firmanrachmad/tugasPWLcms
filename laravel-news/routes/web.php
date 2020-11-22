@@ -17,4 +17,4 @@
 
 Route::get('/','NewsController@getData');
 
-Route::get('/search','TestController@searchData');
+Route::get('/search','NewsController@searchData');

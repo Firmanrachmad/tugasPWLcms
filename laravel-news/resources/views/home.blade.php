@@ -1,3 +1,6 @@
+@extends('layouts.app')
+
+@section('content')
 <form class="form-inline" action="/search">
     @csrf
     <label for="keyword">Kata kunci : </label>
@@ -6,7 +9,7 @@
 </form>
 <div class="container">
     <h2>Daftar Artikel</h2>
-@foreach($artikel as $a)
+    @foreach($artikel as $a)
     <div class="panel panel-default" col=>
         <div class="panel-heading">
             <h3>{{ $a->title}}<h3>
@@ -17,5 +20,6 @@
         <p>{{ $a->url}}<p>
         </div>
     </div>
-@endforeach
+    @endforeach
 </div>
+@endsection	
