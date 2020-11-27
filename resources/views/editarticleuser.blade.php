@@ -13,22 +13,30 @@
       <small>Halaman ini berfungsi untuk mengelola data dalam tabel</small>
     </h1>
 
-    <form action="/artikel/update/{{$article->id}}" method="post" enctype="multipart/form-data">
+    <form action="/manageusers/update/{{$users->id}}" method="post" enctype="multipart/form-data">
         {{csrf_field()}}
-        <input type="hidden" name="id" value="{{$article->id}}"></br>
+        <input type="hidden" name="id" value="{{$users->id}}"></br>
         <div class="form-group">
-            <label for="title">Judul</label>
-            <input type="text" class="form-control" required="required" name="title" value="{{$article->title}}"></br>
+            <label for="name">Nama</label>
+            <input type="text" class="form-control" required="required" name="name" value="{{$users->name}}"></br>
         </div>
         <div class="form-group">
-            <label for="content">Content</label>
-            <input type="text" class="form-control" required="required" name="content" value="{{$article->content}}"></br>
+            <label for="email">Email</label>
+            <input type="text" class="form-control" required="required" name="email" value="{{$users->email}}"></br>
         </div>
         <div class="form-group">
-            <label for="image">Feature Image</label>
+                <label for="password">Password</label>
+                <input type="password" class="form-control" required="required" name="password" value="{{$users->password}}"></br>
+            </div>
+        <div class="form-group">
+            <label for="image">Image</label>
             <input type="file" class="form-control" required="required" name="image" accept="image/*"></br>
-            <img width="150px" src="{{asset('storage/'.$article->featured_image)}}">
+            <img width="150px" src="{{asset('storage/'.$users->image)}}">
         </div>
+        <div class="form-group">
+                <label for="roles">Roles</label>
+                <input type="text" class="form-control" required="required" name="roles" value="{{$users->roles}}"></br>
+            </div>
         <button type="submit" name="edit" class="btn btn-primary float-right">Ubah Data</button>
     </form>
 

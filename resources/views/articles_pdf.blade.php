@@ -29,7 +29,7 @@
         <td>{{ $i++ }}</td>
         <td>{{$a->title}}</td>
         <td>{{$a->content}}</td>
-        <td>{{$a->featured_image}}</td>
+        <td><img class="card-img-top" width="150px" src="{{ public_path('storage/'.$a->featured_image) }}" alt="Card image cap"></td>
     </tr>
     @endforeach
 </tbody>

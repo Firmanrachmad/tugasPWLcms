@@ -21,9 +21,8 @@
             <tr>
                 <th>No</th>
                 <th>Judul</th>
+                <th>Image</th>
                 <th>Tanggal</th>
-                <th></th>
-                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -31,6 +30,7 @@
         <tr>
             <td>{{$a->id}}</td>
             <td>{{$a->title}}</td>
+            <td><img width="150px" src="{{ asset('storage/'.$a->featured_image) }}" alt="ImageCap"></td>
             <td>{{$a->created_at}}</td>
             <td><a href="artikel/edit/{{ $a->id }}" class="badge badge-warning">Edit</a></td>
             <td><a href="artikel/delete/{{ $a->id }}" class="badge badge-danger">Hapus</a></td>

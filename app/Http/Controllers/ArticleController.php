@@ -42,7 +42,7 @@ class ArticleController extends Controller
         Article::create([
         'title' => $request->title,
         'content' => $request->content,
-        'featured_image' => $request->image
+        'featured_image' => $image_name
         ]);
         return redirect('/manage');
     }
@@ -54,17 +54,19 @@ class ArticleController extends Controller
     public function update($id, Request $request)
     {
         $article = Article::find($id);
+        if($request->file('image')){
         $article->title = $request->title;
         $article->content = $request->content;
-        if($article->featured_image &&
-        file_exists(storage_path('app/public/' . $article->featured_image)))
+        if($article->featured_image && file_exists(storage_path('app/public/' . $article->featured_image)))
         {
-            \Storage::delete('public/'.$article->featured_image);
+            Storage::delete('public/'.$article->featured_image);
         }
         $image_name = $request->file('image')->store('images', 'public');
         $article->featured_image = $image_name;
         $article->save();
+        }
         return redirect('/manage');
+
     }
     public function delete($id)
     {

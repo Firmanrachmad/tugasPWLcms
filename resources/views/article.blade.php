@@ -29,8 +29,7 @@
         <hr>
 
         <!-- Preview Image -->
-        {{$article->featured_image}}
-        <img class="card-img-top" src={{$article->featured_image}} alt="Card image cap">
+        <img class="card-img-top" src="{{ asset('storage/'.$article->featured_image)}}" alt="Card image cap">
         
         
         <hr>

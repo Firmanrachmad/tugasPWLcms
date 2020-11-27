@@ -10,27 +10,38 @@
   <div class="col-md-8">
     
     <h1 class="my-4">Kelola Data <br>
-      <small>Halaman ini berfungsi untuk mengelola data dalam tabel</small>
+      <small>Halaman ini berfungsi untuk mengelola data User dalam tabel</small>
     </h1>
 
-    <form action="/artikel/update/{{$article->id}}" method="post" enctype="multipart/form-data">
-        {{csrf_field()}}
-        <input type="hidden" name="id" value="{{$article->id}}"></br>
-        <div class="form-group">
-            <label for="title">Judul</label>
-            <input type="text" class="form-control" required="required" name="title" value="{{$article->title}}"></br>
-        </div>
-        <div class="form-group">
-            <label for="content">Content</label>
-            <input type="text" class="form-control" required="required" name="content" value="{{$article->content}}"></br>
-        </div>
-        <div class="form-group">
-            <label for="image">Feature Image</label>
-            <input type="file" class="form-control" required="required" name="image" accept="image/*"></br>
-            <img width="150px" src="{{asset('storage/'.$article->featured_image)}}">
-        </div>
-        <button type="submit" name="edit" class="btn btn-primary float-right">Ubah Data</button>
-    </form>
+    <a href="manageusers/add" class="btn btn-primary">Tambah Data User</a>
+    </br>
+    </br>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Nama</th>
+                <th>Foto Profil</th>
+                <th>Email</th>
+                <th>Roles</th>
+            </tr>
+        </thead>
+        <tbody>
+        @foreach($users as $u)
+        <tr>
+            <td>{{$u->name}}</td>
+            <td><img width="150px" src="{{ asset('storage/'.$u->image) }}" alt="ImageCap"></td>
+            <!-- <td>{{ $u->image }}</td> -->
+            <td>{{$u->email}}</td>
+            <td>{{$u->roles}}</td>
+            <td><a href="manageusers/edit/{{ $u->id }}" class="badge badge-warning">Edit</a></td>
+            <td><a href="manageusers/delete/{{ $u->id }}" class="badge badge-danger">Hapus</a></td>
+            
+        </tr>
+        @endforeach
+    </tbody>
+    </table>
+    <a href="/manageusers/cetak_pdf" class="btn btn-primary" target="_blank">CETAK PDF</a>
+    
 
   </div>
 
@@ -66,4 +77,4 @@
 
 </div>
 <!-- /.container -->
-  @endsection
+  @endsection	
